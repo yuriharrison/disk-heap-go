@@ -2,8 +2,6 @@ package main
 
 import (
 	"os"
-
-	"github.com/yuriharrison/disk-heap-go/list"
 )
 
 func openFile(filePath string, flags int) *os.File {
@@ -75,10 +73,4 @@ func main() {
 	// f := openFile(v+"/internal/data.db", os.O_RDWR)
 	// f.Write(make([]byte, os.Getpagesize()))
 	// f.Close()
-
-	l := list.NewNodeList()
-
-	// l.Append(0, uuid.Must(uuid.NewV4()), 100)
-	// l.Append(1, uuid.Must(uuid.NewV4()), 200)
-	// l.Append(2, uuid.Must(uuid.NewV4()), 200)
 }
