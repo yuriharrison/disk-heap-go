@@ -20,7 +20,6 @@ type List struct {
 
 // NewList Create new List instance
 func NewList(itemSize int, dbPath string, maxPageSize, minPageSize int) List {
-
 	return List{
 		dbPath:      dbPath,
 		osPageSize:  os.Getpagesize(),
@@ -106,6 +105,7 @@ func (l *List) getMap(pageSize int, offset int64) mmap.MMap {
 func (l *List) write(index int, data []byte) {
 	offset, pageSize, innerPageOffset := l.fileOffset(index)
 	m := l.getMap(pageSize, offset)
+	println("\n\n\n", "data", len(data), "m", len(m), "poggset", innerPageOffset, "\n\n\n")
 	for _, b := range data {
 		m[innerPageOffset] = b
 		innerPageOffset++

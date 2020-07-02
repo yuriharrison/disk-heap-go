@@ -73,7 +73,7 @@ func deserialize(data []byte) testItem {
 }
 
 func createFile(filePath string) {
-	f := openFile(filePath, os.O_WRONLY)
+	f := openFile(filePath, os.O_CREATE)
 	f.Write(make([]byte, itemSize))
 	f.Close()
 }
